@@ -37,7 +37,7 @@ const config: HardhatUserConfig = {
   paths: {
     sources: path.resolve(__dirname, 'contracts'),
     tests: path.resolve(__dirname, 'tests'),
-    cache: path.resolve(__dirname, '../../.cache'),
+    cache: path.resolve(__dirname, './dist/.cache'),
     artifacts: path.resolve(__dirname, 'dist/artifacts'),
   },
 
