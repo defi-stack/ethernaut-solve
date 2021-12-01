@@ -1,0 +1,34 @@
+{
+  "name": "ethernaut-solve",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "wiasliaw <wiasliaw@protonmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "compile:all": "pnpm compile --filter @ethernaut-solve/*",
+    "test:all": "pnpm test --filter @ethernaut-solve/*",
+    "clean:all": "pnpm clean --filter @ethernaut-solve/*"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@typechain/hardhat": "^3.0.0",
+    "hardhat": "^2.7.0"
+  },
+  "devDependencies": {
+    "@typechain/ethers-v5": "^8.0.5",
+    "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.11.11",
+    "chai": "^4.3.4",
+    "dotenv": "^10.0.0",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.1",
+    "lodash": "^4.17.21",
+    "mocha": "^9.1.3",
+    "ts-node": "^10.4.0",
+    "typechain": "^6.0.5",
+    "typescript": "^4.5.2"
+  }
+}
