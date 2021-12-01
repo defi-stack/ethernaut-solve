@@ -1,0 +1,9 @@
+{
+  "name": "@ethernaut-solve/utils",
+  "version": "1.0.0",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "exit 0",
+    "clean": "rm -rf dist"
+  }
+}
