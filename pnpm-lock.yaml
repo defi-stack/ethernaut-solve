@@ -59,6 +59,9 @@ importers:
       '@ethernaut-solve/utils': link:../utils
       '@openzeppelin/contracts': 4.4.0
 
+  packages/4_telephone:
+    specifiers: {}
+
 packages:
 
   /@cspotcode/source-map-consumer/0.8.0:
