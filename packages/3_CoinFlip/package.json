@@ -1,0 +1,13 @@
+{
+  "name": "@ethernaut-solve/coinflip",
+  "version": "1.0.0",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@ethernaut-solve/utils": "workspace:^1.0.0",
+    "@openzeppelin/contracts": "^4.4.0"
+  }
+}

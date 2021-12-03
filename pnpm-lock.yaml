@@ -51,6 +51,14 @@ importers:
     dependencies:
       '@ethernaut-solve/utils': link:../utils
 
+  packages/3_CoinFlip:
+    specifiers:
+      '@ethernaut-solve/utils': workspace:^1.0.0
+      '@openzeppelin/contracts': ^4.4.0
+    dependencies:
+      '@ethernaut-solve/utils': link:../utils
+      '@openzeppelin/contracts': 4.4.0
+
 packages:
 
   /@cspotcode/source-map-consumer/0.8.0:
@@ -548,6 +556,10 @@ packages:
       ethereum-waffle: 3.4.0_typescript@4.5.2
       ethers: 5.5.1
       hardhat: 2.7.0
+    dev: false
+
+  /@openzeppelin/contracts/4.4.0:
+    resolution: {integrity: sha512-dlKiZmDvJnGRLHojrDoFZJmsQVeltVeoiRN7RK+cf2FmkhASDEblE0RiaYdxPNsUZa6mRG8393b9bfyp+V5IAw==}
     dev: false
 
   /@resolver-engine/core/0.3.3:
