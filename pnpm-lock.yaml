@@ -12,7 +12,6 @@ importers:
       '@types/mocha': ^9.0.0
       '@types/node': ^16.11.11
       chai: ^4.3.4
-      dotenv: ^10.0.0
       ethereum-waffle: ^3.4.0
       ethers: ^5.5.1
       hardhat: ^2.7.0
@@ -32,7 +31,6 @@ importers:
       '@types/mocha': 9.0.0
       '@types/node': 16.11.11
       chai: 4.3.4
-      dotenv: 10.0.0
       ethereum-waffle: 3.4.0_typescript@4.5.2
       ethers: 5.5.1
       lodash: 4.17.21
@@ -2523,11 +2521,6 @@ packages:
 
   /dom-walk/0.1.2:
     resolution: {integrity: sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==}
-    dev: true
-
-  /dotenv/10.0.0:
-    resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
-    engines: {node: '>=10'}
     dev: true
 
   /dotignore/0.1.2:

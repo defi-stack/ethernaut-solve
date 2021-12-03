@@ -6,8 +6,6 @@ import '@nomiclabs/hardhat-ethers';
 import '@nomiclabs/hardhat-waffle';
 import '@typechain/hardhat';
 
-dotenv.config({ path: path.resolve(__dirname, '../../.env') });
-
 const config: HardhatUserConfig = {
   // default network
   defaultNetwork: 'hardhat',
