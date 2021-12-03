@@ -4,7 +4,7 @@ import { Fallout } from '../dist/types';
 
 use(waffle.solidity);
 
-describe('Fallback', () => {
+describe('Fallout', () => {
   let fallout: Fallout;
 
   beforeEach(async () => {
