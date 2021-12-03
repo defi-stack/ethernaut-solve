@@ -27,6 +27,13 @@ const config: HardhatUserConfig = {
           evmVersion: 'berlin',
         },
       },
+      {
+        version: '0.6.0',
+        settings: {
+          optimizer: { enabled: true, runs: 200 },
+          evmVersion: 'berlin',
+        },
+      },
     ],
   },
 
