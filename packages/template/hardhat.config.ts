@@ -1,9 +1,13 @@
 import path from 'path';
+import dotenv from 'dotenv';
 import { HardhatUserConfig } from 'hardhat/config';
 
 import '@nomiclabs/hardhat-ethers';
 import '@nomiclabs/hardhat-waffle';
 import '@typechain/hardhat';
+import 'hardhat-deploy';
+
+dotenv.config({ path: path.resolve(__dirname, '../../.env')});
 
 const config: HardhatUserConfig = {
   // default network
@@ -15,6 +19,12 @@ const config: HardhatUserConfig = {
       throwOnCallFailures: true,
       throwOnTransactionFailures: true,
     },
+
+    rinkeby: {
+      url: 'https://rinkeby-light.eth.linkpool.io/',
+      chainId: 4,
+      accounts: [`${process.env.PRIVATE_KEY}`],
+    }
   },
 
   // solidity config
@@ -43,12 +53,19 @@ const config: HardhatUserConfig = {
     tests: path.resolve(__dirname, 'tests'),
     cache: path.resolve(__dirname, './dist/.cache'),
     artifacts: path.resolve(__dirname, 'dist/artifacts'),
+    deploy: path.resolve(__dirname, 'deploy'),
+    deployments: path.resolve(__dirname, 'deployments'),
   },
 
   // typechain
   typechain: {
     outDir: 'dist/types',
     target: 'ethers-v5',
+  },
+
+  // hardhat-deployment
+  namedAccounts: {
+    deployer: 0,
   },
 };
 
