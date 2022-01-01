@@ -5,7 +5,8 @@
   ],
   "include": [
     "./tests",
-    "./deploy"
+    "./deploy",
+    "./scripts"
   ],
   "exclude": [
     "./node_modules"
