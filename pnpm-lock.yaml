@@ -43,6 +43,12 @@ importers:
       typechain: 6.0.5_typescript@4.5.2
       typescript: 4.5.2
 
+  packages/15_naught_coin:
+    specifiers:
+      '@ethernaut-solve/utils': workspace:^1.0.0
+    dependencies:
+      '@ethernaut-solve/utils': link:../utils
+
   packages/1_Fallback:
     specifiers:
       '@ethernaut-solve/utils': workspace:^1.0.0
