@@ -4,7 +4,9 @@
     "./hardhat.config.ts"
   ],
   "include": [
-    "./tests"
+    "./tests",
+    "./deploy",
+    "./scripts"
   ],
   "exclude": [
     "./node_modules"

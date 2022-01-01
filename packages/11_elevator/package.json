@@ -4,6 +4,9 @@
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "deploy:hardhat": "hardhat deploy",
+    "deploy:rinkeby": "hardhat deploy --network rinkeby",
+    "trigger": "hardhat --network rinkeby run scripts/trigger.ts"
   }
 }
