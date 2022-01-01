@@ -1,0 +1,14 @@
+{
+  "name": "@ethernaut-solve/naught-coin",
+  "version": "1.0.0",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "rm -rf dist",
+    "deploy:rinkeby": "hardhat deploy --network rinkeby",
+    "trigger": "hardhat --network rinkeby run scripts/trigger.ts"
+  },
+  "dependencies": {
+    "@ethernaut-solve/utils": "workspace:^1.0.0"
+  }
+}

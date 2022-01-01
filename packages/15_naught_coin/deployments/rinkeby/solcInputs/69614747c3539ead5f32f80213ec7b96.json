@@ -1,0 +1,36 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Approver.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ninterface IERC20 {\n    function balanceOf(address _owner) external view returns (uint256 balance);\n\n    function transfer(address _to, uint256 _value)\n        external\n        returns (bool success);\n\n    function transferFrom(\n        address _from,\n        address _to,\n        uint256 _value\n    ) external returns (bool success);\n\n    function approve(address _spender, uint256 _value)\n        external\n        returns (bool success);\n\n    function allowance(address _owner, address _spender)\n        external\n        view\n        returns (uint256 remaining);\n}\n\n\ncontract Approver {\n    IERC20 private _token;\n\n    constructor(address token_) {\n        _token = IERC20(token_);\n    }\n\n    function moveAll() external {\n        uint256 amount = _token.balanceOf(msg.sender);\n        _token.transferFrom(msg.sender, address(this), amount);\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "berlin",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
