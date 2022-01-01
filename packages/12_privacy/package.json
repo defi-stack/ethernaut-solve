@@ -1,0 +1,9 @@
+{
+  "name": "@ethernaut-solve/privacy",
+  "version": "1.0.0",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "rm -rf dist"
+  }
+}
