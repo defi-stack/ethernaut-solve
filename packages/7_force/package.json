@@ -1,0 +1,10 @@
+{
+  "name": "@ethernaut-solve/force",
+  "version": "1.0.0",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "rm -rf dist",
+    "deploy:rinkeby": "hardhat deploy --network rinkeby"
+  }
+}

